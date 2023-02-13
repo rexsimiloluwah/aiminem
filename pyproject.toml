@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "aiminem"
+version = "0.1.0"
+description = "An AI-powered battle rapper using GPT-3 and OpenAI Whisper"
+authors = ["rexsimiloluwah <adetoyosi2001@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+openai = "^0.26.5"
+openai-whisper = "^20230124"
+torch = "1.12.1"
+python-decouple = "^3.7"
+sounddevice = "^0.4.5"
+soundfile = "^0.11.0"
+pyfiglet = "^0.8.post1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^6.0.0"
+black = "22.3.0"
+flake8 = "4.0.1"
+isort = "^5.10.1"
+pre-commit = "^3.0.4"
+
+[tool.black]
+line-length = 75
+target_version = ["py310"]
+
+[tool.isort]
+profile = "black"
+py_version = 310
+multi_line_output = 3
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
