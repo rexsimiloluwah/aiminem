@@ -31,6 +31,12 @@ profile = "black"
 py_version = 310
 multi_line_output = 3
 
+[tool.flake8]
+max-line-length= 75                                                                  
+max-complexity = 18                                                                   
+select="B,C,E,F,W,T4,B9"                                
+ignore="E203,E266,E501,W503,F403,F401,E402" 
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

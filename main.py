@@ -21,7 +21,11 @@ openai.api_key = OPENAI_API_KEY
 parser = argparse.ArgumentParser()
 parser.add_argument("-d", "--debug", type=bool, help="Debug mode", default=False)
 parser.add_argument(
-    "-g", "--gptmodel", type=str, help="GPT model", default="text-davinci-003"
+    "-g",
+    "--gptmodel",
+    type=str,
+    help="GPT model",
+    default="text-davinci-003",
 )
 parser.add_argument(
     "-w", "--whispermodel", type=str, help="Whisper model", default="base"
