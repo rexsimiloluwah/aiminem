@@ -24,11 +24,15 @@ parser.add_argument(
     "-g",
     "--gptmodel",
     type=str,
-    help="GPT model",
+    help="GPT model (https://platform.openai.com/docs/models/gpt-3)",
     default="text-davinci-003",
 )
 parser.add_argument(
-    "-w", "--whispermodel", type=str, help="Whisper model", default="base"
+    "-w",
+    "--whispermodel",
+    type=str,
+    help="Whisper model (https://github.com/openai/whisper/blob/main/model-card.md)",
+    default="base",
 )
 
 args = parser.parse_args()
@@ -61,6 +65,11 @@ def show_exit_message() -> None:
 
 
 def transcribe(filename: str) -> str:
+    """Transcribe audio using Whisper
+
+    :param filename (str)
+    :returns transcribed_text (str)
+    """
     torch.cuda.is_available()
     DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 
@@ -85,12 +94,14 @@ def transcribe(filename: str) -> str:
 
 
 def callback(indata, frames, time, status):
+    """Callback for the audio recording stream"""
     if status:
         print(status, file=sys.stderr)
     q.put(indata.copy())
 
 
-def record_audio():
+def record_audio() -> None:
+    """Records audio, and stores the result in a buffer"""
     try:
         filename = tempfile.NamedTemporaryFile(suffix=".wav")
 
@@ -125,7 +136,12 @@ def record_audio():
         raise e
 
 
-def generate_response(text: str):
+def generate_response(text: str) -> str:
+    """Generate the response using GPT-3
+
+    :param text (str)
+    :returns generated_response (str)
+    """
     response = openai.Completion.create(
         model=args.gptmodel,
         prompt=f"generate a battle rap response to: {text}",
