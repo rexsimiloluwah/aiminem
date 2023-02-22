@@ -5,6 +5,10 @@
     An AI-powered battle rapper using OpenAI Whisper and GPT-3 🚀.
 </h4>
 
+[![AIMINEM demo](AIMINEM DEMO - Watch Video
+
+)](https://www.loom.com/share/7e6ba54703f44394bb517e5e2ca6b676 "AIMINEM Video Demo")
+
 [![experimental](https://badges.github.io/stability-badges/dist/experimental.svg)](https://github.com/badges/stability-badges)
 
 ### Uses
