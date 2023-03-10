@@ -7,6 +7,11 @@
 
 [![experimental](https://badges.github.io/stability-badges/dist/experimental.svg)](https://github.com/badges/stability-badges)
 
+<a href="https://www.loom.com/share/7e6ba54703f44394bb517e5e2ca6b676">
+  <p>AIMINEM DEMO - Watch Video</p>
+  <img style="max-width:300px;" src="https://cdn.loom.com/sessions/thumbnails/7e6ba54703f44394bb517e5e2ca6b676-with-play.gif">
+</a>
+
 ### Uses
 
 - Python (>3.6)
